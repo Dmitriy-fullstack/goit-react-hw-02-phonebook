@@ -1,20 +1,23 @@
 
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 
-function ContactList({contacts}) {
-    return (
-        <>
-            <ul>
-                {contacts.map(contact => {
-                    const {id, name} = contact;
-                    return (<li>
-                        <p>Name: {name}</p>
-                        <p>Id: {id}</p>
-                    </li>)
-                })}
-            </ul>  
-        </>
-    )
+
+function ContactList( {contacts} ) {
+    return 
+        // <>
+        //     {console.log(this.contacts)}
+        //     <ul>
+        //         { {contacts.(contact => {
+        //             const {id, name} = contact;
+        //             return (<li key={uuidv4()}>
+        //                 <p>Name: {name}</p>
+                        
+        //             </li>)
+        //         })} }
+        //     </ul>   
+        // </>
+    
 }
 
 ContactList.propTypes = {

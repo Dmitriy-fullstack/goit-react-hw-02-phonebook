@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+
 import style from './contactForm.module.css';
 import shortid from 'shortid';
+import { v4 as uuidv4 } from 'uuid';
 
 
 export default class ContactForm extends Component {
@@ -11,7 +13,7 @@ export default class ContactForm extends Component {
    }
 
    nameInputId = shortid.generate();
-   nameContactsId = shortid.generate();
+   
 
    handleChange = event => {
        const {name, value} = event.currentTarget
@@ -20,15 +22,9 @@ export default class ContactForm extends Component {
 
    handleSubmit = e => {
         e.preventDefault();
-        const contacts = [...this.state.contacts, { name: this.state.name, id: this.nameContactsId},
-        ];
-        this.setState({ contacts });
-        
         this.props.onSubmit(this.state);
-
-
         this.handleClearState();
-        console.log(this.state); 
+         
           
     }
 
