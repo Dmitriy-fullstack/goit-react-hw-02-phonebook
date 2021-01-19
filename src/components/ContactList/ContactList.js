@@ -1,6 +1,7 @@
 
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import style from './contactList.module.css';
 
 
 function ContactList( {contacts} ) {
@@ -9,8 +10,8 @@ function ContactList( {contacts} ) {
             <ul>
                 {contacts.map(contact => {
                     const {name} = contact;
-                    return (<li key={uuidv4()}>
-                        <p>{name}</p>
+                    return (<li className={style.listItem} key={uuidv4()}>
+                        <p className={style.listItemName}>{name}</p>
                         
                     </li>)
                 })} 

@@ -1,3 +1,17 @@
 .buttonAdd {
   border-radius: 5px;
+  width: 100px;
+  margin-top: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputName {
+  width: 300px;
+}
+.labelName {
+  font-weight: 500;
 }

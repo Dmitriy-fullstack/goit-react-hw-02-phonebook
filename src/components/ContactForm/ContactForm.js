@@ -31,10 +31,10 @@ handleChange = event => {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}> 
-                    <label htmlFor={this.nameInputId}>
-                        Name: <input type='text' name='name' value={this.state.name} id={this.nameInputId}  onChange={this.handleChange}/> 
-                    </label> 
+                <form className={style.form} onSubmit={this.handleSubmit}> 
+                    <label className={style.labelName} htmlFor={this.nameInputId}>Name:</label>
+                    <input className={style.inputName} type='text' name='name' value={this.state.name} id={this.nameInputId}  onChange={this.handleChange}/> 
+                     
 
                     <button className={style.buttonAdd} type='submit'>Add contact</button>
                 </form> 
