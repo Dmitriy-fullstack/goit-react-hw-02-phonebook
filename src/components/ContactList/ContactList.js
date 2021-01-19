@@ -4,20 +4,19 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 function ContactList( {contacts} ) {
-    return 
-        // <>
-        //     {console.log(this.contacts)}
-        //     <ul>
-        //         { {contacts.(contact => {
-        //             const {id, name} = contact;
-        //             return (<li key={uuidv4()}>
-        //                 <p>Name: {name}</p>
+    return (
+        <>
+            <ul>
+                {contacts.map(contact => {
+                    const {name} = contact;
+                    return (<li key={uuidv4()}>
+                        <p>{name}</p>
                         
-        //             </li>)
-        //         })} }
-        //     </ul>   
-        // </>
-    
+                    </li>)
+                })} 
+            </ul>   
+        </>
+    )
 }
 
 ContactList.propTypes = {

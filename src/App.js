@@ -11,17 +11,19 @@ class App extends Component {
   }
 
   onSubmitHendler = data => {
+    
     const newContacts ={
       name: data.name,
       id: uuidv4()
     }
-    this.setState((prevState => {
-         return ({contacts: [...prevState.contacts, newContacts]})
-        }))
-    console.log(this.state);
+    this.setState(( {contacts} ) => {
+         return ({contacts: [...contacts, newContacts]})
+        })
+    
   }
 
  render() {
+
    return (
     <div className="App">
       
@@ -29,7 +31,7 @@ class App extends Component {
         <ContactForm onSubmit={this.onSubmitHendler}/>
 
         <h2>Contacts</h2>
-        {/* <ContactList />  */}
+        <ContactList contacts={this.state.contacts}/> 
     </div>
   )
  } 

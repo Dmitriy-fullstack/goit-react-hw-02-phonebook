@@ -7,15 +7,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default class ContactForm extends Component {
    state = {
-    name: '',
-    contacts: []
-    
-   }
+    name: ''
+}
 
-   nameInputId = shortid.generate();
-   
+nameInputId = shortid.generate();
 
-   handleChange = event => {
+handleChange = event => {
        const {name, value} = event.currentTarget
        this.setState({[name]: value})
    }
@@ -24,8 +21,7 @@ export default class ContactForm extends Component {
         e.preventDefault();
         this.props.onSubmit(this.state);
         this.handleClearState();
-         
-          
+        
     }
 
    handleClearState = () => {
