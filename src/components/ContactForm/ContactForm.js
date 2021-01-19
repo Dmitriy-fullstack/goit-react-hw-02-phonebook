@@ -7,10 +7,13 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default class ContactForm extends Component {
    state = {
-    name: ''
+    name: '',
+    number: '',
+    contacts: []
 }
 
 nameInputId = shortid.generate();
+numberInputId = shortid.generate();
 
 handleChange = event => {
        const {name, value} = event.currentTarget
@@ -25,7 +28,7 @@ handleChange = event => {
     }
 
    handleClearState = () => {
-       this.setState({name:''})
+       this.setState({name:'', number:''})
    }
 
     render() {
@@ -34,7 +37,9 @@ handleChange = event => {
                 <form className={style.form} onSubmit={this.handleSubmit}> 
                     <label className={style.labelName} htmlFor={this.nameInputId}>Name:</label>
                     <input className={style.inputName} type='text' name='name' value={this.state.name} id={this.nameInputId}  onChange={this.handleChange}/> 
-                     
+
+                    <label className={style.labelName} htmlFor={this.numberInputId}>Telephone number:</label>
+                    <input className={style.inputName} type='text' name='number' value={this.state.number} id={this.numberInputId}  onChange={this.handleChange}/> 
 
                     <button className={style.buttonAdd} type='submit'>Add contact</button>
                 </form> 

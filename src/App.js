@@ -13,6 +13,7 @@ class App extends Component {
   onSubmitHendler = data => {
     
     const newContacts ={
+      number: data.number,
       name: data.name,
       id: uuidv4()
     }

@@ -9,9 +9,9 @@ function ContactList( {contacts} ) {
         <>
             <ul>
                 {contacts.map(contact => {
-                    const {name} = contact;
+                    const {name, number} = contact;
                     return (<li className={style.listItem} key={uuidv4()}>
-                        <p className={style.listItemName}>{name}</p>
+                        <p className={style.listItemName}>{name}: {number}</p>
                         
                     </li>)
                 })} 
