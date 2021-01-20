@@ -4,6 +4,7 @@ import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
 import { v4 as uuidv4 } from 'uuid';
+import swal from 'sweetalert';
 
 
 class App extends Component {
@@ -28,7 +29,7 @@ class App extends Component {
   onFilterHendler = data => {
   this.setState({filter: data})
   }
-  visibleContacts = () => {
+  getVisibleContacts = () => {
     const { contacts, filter } = this.state;
 
     return contacts.filter(contact =>
@@ -37,7 +38,7 @@ class App extends Component {
   };
 
  render() {
-    const visibleContacts = this.visibleContacts();
+    const visibleContacts = this.getVisibleContacts();
   
    return (
     <div className="App">
