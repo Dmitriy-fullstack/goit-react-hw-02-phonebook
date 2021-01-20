@@ -25,9 +25,20 @@ class App extends Component {
         })
     
   }
+  onFilterHendler = data => {
+  this.setState({filter: data})
+  }
+  visibleContacts = () => {
+    const { contacts, filter } = this.state;
+
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase()),
+    );
+  };
 
  render() {
-
+    const visibleContacts = this.visibleContacts();
+  
    return (
     <div className="App">
       <div className='appInputMenu'>
@@ -35,8 +46,8 @@ class App extends Component {
         <ContactForm onSubmit={this.onSubmitHendler}/>
       </div>
         <h2>Contacts</h2>
-        <Filter />
-        <ContactList contacts={this.state.contacts}/> 
+        <Filter value={this.state.filter} onChangeFilter={this.onFilterHendler}/>
+        <ContactList contacts={visibleContacts}/> 
     </div>
   )
  } 
