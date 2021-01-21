@@ -4,15 +4,15 @@ import { v4 as uuidv4 } from 'uuid';
 import style from './contactList.module.css';
 
 
-function ContactList( {contacts} ) {
+function ContactList( {contacts, onContactDelete} ) {
     return (
         <>
             <ul>
                 {contacts.map(contact => {
-                    const {name, number} = contact;
+                    const {name, number, id} = contact;
                     return (<li className={style.listItem} key={uuidv4()}>
                         <p className={style.listItemName}>{name}: {number}</p>
-                        
+                        <button className={style.deleteButton} type="button" onClick={() => onContactDelete(id)}>Delete</button>
                     </li>)
                 })} 
             </ul>   

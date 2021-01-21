@@ -11,6 +11,7 @@
 
 .inputName {
   width: 300px;
+  background-color: rgb(210, 178, 240);
 }
 .labelName {
   font-weight: 500;

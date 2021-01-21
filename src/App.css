@@ -6,3 +6,10 @@
   width: 400px;
   padding: 10px;
 }
+.body {
+  background-color: rgb(153, 153, 194);
+}
+
+button {
+  background-color: darkgrey;
+}

@@ -4,3 +4,10 @@
 .listItemName {
   margin-bottom: 0;
 }
+.deleteButton {
+  width: 100px;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+}
