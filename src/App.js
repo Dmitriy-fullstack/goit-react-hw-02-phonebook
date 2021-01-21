@@ -15,17 +15,22 @@ class App extends Component {
   number: ''
   }
 
-  onSubmitHendler = data => {
+    onSubmitHendler = data => {
       const newContacts ={
       number: data.number,
       name: data.name,
       id: uuidv4()
-    }
-    this.setState(( {contacts} ) => {
-         return ({contacts: [...contacts, newContacts]})
-        })
+     }  
+     
+     if(this.state.contacts.find(({name}) => name.toLowerCase() === data.name.toLowerCase())) {swal("Cant add!", "Contact already exist!", "error")
+     return}
+
+     this.setState(( {contacts} ) => {return ({contacts: [...contacts, newContacts]})
+        }
+      )
     
-  }
+    }
+
   onFilterHendler = data => {
   this.setState({filter: data})
   }

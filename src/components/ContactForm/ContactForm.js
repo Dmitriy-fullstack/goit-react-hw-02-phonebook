@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import style from './contactForm.module.css';
 import shortid from 'shortid';
 import { v4 as uuidv4 } from 'uuid';
+import swal from 'sweetalert';
 
 
 export default class ContactForm extends Component {
