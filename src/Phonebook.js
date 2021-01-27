@@ -4,6 +4,7 @@ import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
 import { v4 as uuidv4 } from 'uuid';
 import swal from 'sweetalert';
+import PropTypes from 'prop-types';
 
 class Phonebook extends Component {
     state ={
@@ -11,6 +12,17 @@ class Phonebook extends Component {
     filter: '',
     name: '',
     number: ''
+    }
+
+    componentDidUpdate (prevProps, prevState) {
+      if(this.state.contacts !== prevState.contacts) {
+        localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+      }
+    }
+    componentDidMount() {
+      const contacts = localStorage.getItem('contacts');
+      const parsedContacts = JSON.parse(contacts);
+      this.setState({contacts: parsedContacts})
     }
   
       onSubmitHendler = data => {

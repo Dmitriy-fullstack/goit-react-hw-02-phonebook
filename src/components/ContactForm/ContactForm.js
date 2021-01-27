@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types';
 import style from './contactForm.module.css';
 import shortid from 'shortid';
 import { v4 as uuidv4 } from 'uuid';
