@@ -1,6 +1,6 @@
 import  { Component } from 'react'
 import PropTypes from 'prop-types'
-import style from './filter.module.css';
+
 import shortid from 'shortid';
 
 export default class Filter extends Component {
